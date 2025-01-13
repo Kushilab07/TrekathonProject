@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Company Dashboard</h1>
+      <nav>
+        <ul>
+          <li><a href="#attendance">Attendance</a></li>
+          <li><a href="#leave">Leave</a></li>
+          <li><a href="#payroll">Payroll</a></li>
+          <li><a href="#travel">Travel</a></li>
+          <li><a href="#expenses">Expenses</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Attendance Section -->
+    <section id="attendance" class="section">
+      <div class="container">
+        <h2>Attendance</h2>
+        <button class="view-button" onclick="viewSection('attendance')">View Attendance</button>
+        <div id="attendance-content" class="section-content">
+          <form id="attendance-form">
+            <label for="employee-name">Employee Name:</label>
+            <input type="text" id="employee-name" required>
+
+            <label for="attendance-status">Status (Present/Absent):</label>
+            <select id="attendance-status" required>
+              <option value="Present">Present</option>
+              <option value="Absent">Absent</option>
+            </select>
+
+            <button type="submit">Submit Attendance</button>
+          </form>
+
+          <canvas id="attendance-chart" width="400" height="200"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leave Section -->
+    <section id="leave" class="section">
+      <div class="container">
+        <h2>Leave</h2>
+        <button class="view-button" onclick="viewSection('leave')">View Leave</button>
+        <div id="leave-content" class="section-content">
+          <form id="leave-form">
+            <label for="leave-status">Leave Status:</label>
+            <select id="leave-status" required>
+              <option value="Approved">Approved</option>
+              <option value="Pending">Pending</option>
+              <option value="Denied">Denied</option>
+            </select>
+
+            <button type="submit">Submit Leave</button>
+          </form>
+
+          <canvas id="leave-chart" width="400" height="200"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payroll Section -->
+    <section id="payroll" class="section">
+      <div class="container">
+        <h2>Payroll</h2>
+        <button class="view-button" onclick="viewSection('payroll')">View Payroll</button>
+        <div id="payroll-content" class="section-content">
+          <form id="payroll-form">
+            <label for="salary">Salary (in $):</label>
+            <input type="number" id="salary" required>
+
+            <button type="submit">Submit Payroll</button>
+          </form>
+
+          <canvas id="payroll-chart" width="400" height="200"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Travel Section -->
+    <section id="travel" class="section">
+      <div class="container">
+        <h2>Travel</h2>
+        <button class="view-button" onclick="viewSection('travel')">View Travel</button>
+        <div id="travel-content" class="section-content">
+          <form id="travel-form">
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" required>
+
+            <label for="travel-cost">Travel Cost (in $):</label>
+            <input type="number" id="travel-cost" required>
+
+            <button type="submit">Submit Travel</button>
+          </form>
+
+          <canvas id="travel-chart" width="400" height="200"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expenses Section -->
+    <section id="expenses" class="section">
+      <div class="container">
+        <h2>Expenses</h2>
+        <button class="view-button" onclick="viewSection('expenses')">View Expenses</button>
+        <div id="expenses-content" class="section-content">
+          <form id="expenses-form">
+            <label for="expense-category">Expense Category:</label>
+            <input type="text" id="expense-category" required>
+
+            <label for="expense-amount">Amount (in $):</label>
+            <input type="number" id="expense-amount" required>
+
+            <button type="submit">Submit Expense</button>
+          </form>
+
+          <canvas id="expenses-chart" width="400" height="200"></canvas>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

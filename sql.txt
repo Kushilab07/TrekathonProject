@@ -1,0 +1,37 @@
+CREATE DATABASE company_dashboard;
+
+USE company_dashboard;
+
+CREATE TABLE attendance (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  employee_name VARCHAR(255) NOT NULL,
+  status ENUM('Present', 'Absent') NOT NULL,
+  date DATE NOT NULL
+);
+
+CREATE TABLE leave_requests (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  employee_name VARCHAR(255) NOT NULL,
+  status ENUM('Approved', 'Pending', 'Denied') NOT NULL,
+  leave_date DATE NOT NULL
+);
+
+CREATE TABLE payroll (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  employee_name VARCHAR(255) NOT NULL,
+  salary DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE travel (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  employee_name VARCHAR(255) NOT NULL,
+  destination VARCHAR(255) NOT NULL,
+  travel_cost DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE expenses (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  category VARCHAR(255) NOT NULL,
+  amount DECIMAL(10, 2) NOT NULL,
+  expense_date DATE NOT NULL
+);
